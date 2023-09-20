@@ -18,13 +18,28 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
           modules: {
             auto: (resPath: string) => Boolean(resPath.includes(".module.")),
             localIdentName: isDev
-              ? "[path][name]__[local]--[hash:base:64:5]"
-              : "[hash:base:64:8]",
+              ? "[path][name]__[local]--[hash:base64:5]"
+              : "[hash:base64:8]",
           },
         },
       },
       "sass-loader",
     ],
   };
-  return [typescriptLoader, sassLoader];
+
+  const svgLoader = {
+    test: /\.svg$/i,
+    issuer: /\.[jt]sx?$/,
+    use: ["@svgr/webpack"],
+  };
+
+  const fileLoader = {
+    test: /\.(png|jpe?g|gif|woff|woff2)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+  return [typescriptLoader, sassLoader, svgLoader, fileLoader];
 }
