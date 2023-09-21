@@ -4,8 +4,10 @@ module.exports = {
 		es2021: true,
 	},
 	extends: [
-		'plugin:react/recommended',
 		'xo',
+		'plugin:react/recommended',
+		'plugin:import/recommended',
+
 	],
 	overrides: [
 		{
@@ -23,6 +25,16 @@ module.exports = {
 			extends: [
 				'xo-typescript',
 			],
+			rules: {
+				'@typescript-eslint/object-curly-spacing': [2, 'always'],
+				'react/react-in-jsx-scope': 'off',
+				'@typescript-eslint/no-floating-promises': 'off',
+				'@typescript-eslint/prefer-nullish-coalescing': 'off',
+				'@typescript-eslint/naming-convention': 'off',
+				'react/no-deprecated': 'off',
+				'import/no-unresolved': 'off',
+				'i18next/no-literal-string': ['error', {markupOnly: true}],
+			},
 			files: [
 				'*.ts',
 				'*.tsx',
@@ -39,10 +51,8 @@ module.exports = {
 	plugins: [
 		'react',
 		'@typescript-eslint',
+		'i18next',
 	],
-	rules: {
-		'react/react-in-jsx-scope': 'off',
-		'object-curly-spacing': 'off',
-		'@typescript-eslint/object-curly-spacing': ['error', 'always'],
-	},
+
 };
+

@@ -1,0 +1,11 @@
+.notFoundPage {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: calc(100vh - var(--navbar-height));
+
+	&Title {
+		font-size: var(--font-line-l);
+		color: var(--secondary-color);
+	}
+}
