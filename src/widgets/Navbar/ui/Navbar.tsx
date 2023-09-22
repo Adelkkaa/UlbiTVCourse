@@ -11,6 +11,7 @@ type NavbarProps = {
 
 export const Navbar: FC<NavbarProps> = ({ className }) => {
 	const { t } = useTranslation('translation');
+
 	return (
 		<nav className={classNames(classes.navbar, {}, [className])}>
 			<div className={classes.navbarLinks}>

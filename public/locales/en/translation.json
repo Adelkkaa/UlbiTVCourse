@@ -3,5 +3,7 @@
 	"О нас": "About us",
 	"Язык": "English",
 	"Загрузка": "Loading...",
-	"Страница не найдена": "Page not found..."
+	"Страница не найдена": "Page not found...",
+	"Предохранитель": "An unexpected situation has occurred, try refreshing the page",
+	"Перезагрузка": "Reload page"
 }

@@ -8,7 +8,7 @@ import { useTranslation } from 'react-i18next';
 export const LanguageSwitcher: FC<PropsWithClassName> = ({ className }) => {
 	const { t, i18n } = useTranslation();
 
-	const toggleLanguage = () => {
+	const toggleLanguage = async () => {
 		i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
 	};
 

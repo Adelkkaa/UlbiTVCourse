@@ -19,6 +19,8 @@ module.exports = {
 			],
 			parserOptions: {
 				sourceType: 'script',
+				tsconfigRootDir: __dirname,
+
 			},
 		},
 		{
@@ -33,12 +35,21 @@ module.exports = {
 				'@typescript-eslint/naming-convention': 'off',
 				'react/no-deprecated': 'off',
 				'import/no-unresolved': 'off',
-				'i18next/no-literal-string': ['error', {markupOnly: true}],
+				'i18next/no-literal-string': ['error', {markupOnly: true, ignoreAttribute: ['data-testid']}],
+				'@typescript-eslint/indent': 'off',
+				'@typescript-eslint/member-ordering': ['warn'],
+
 			},
 			files: [
 				'*.ts',
 				'*.tsx',
 			],
+		},
+		{
+			files: ['**/src/**/*test.{ts,tsx}'],
+			rules: {
+				'i18next/no-literal-string': 'off',
+			},
 		},
 	],
 	parserOptions: {
@@ -53,6 +64,5 @@ module.exports = {
 		'@typescript-eslint',
 		'i18next',
 	],
-
 };
 
