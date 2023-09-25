@@ -4,6 +4,7 @@ import classNames from 'shared/lib/classnames';
 
 export enum ThemeButton {
 	CLEAR = 'clear',
+	OUTLINE = 'outline',
 }
 
 type ButtonProps = {

@@ -3,12 +3,7 @@ module.exports = {
 		browser: true,
 		es2021: true,
 	},
-	extends: [
-		'xo',
-		'plugin:react/recommended',
-		'plugin:import/recommended',
-
-	],
+	extends: ['xo', 'plugin:react/recommended', 'plugin:import/recommended', 'plugin:storybook/recommended'],
 	overrides: [
 		{
 			env: {
